@@ -1,14 +1,15 @@
-<h1>Todays story</h1>
+<h1>CONTINUE THE STORI</h1>
+<hr>
 
-<p><%= @last_words %></p>
+<p id="words"><span class="dots">... </span><%= @last_words %><span class="dots">...</span></p>
 
 <%= form_for @story_post do |f| %>
-  <%= f.label :text %>:
-  <%= f.text_field :text %><br />
-
+  <%= f.text_area :text %><br />
+  <div id="counter">140</div>
   <%= f.submit %>
 <% end %>
 
+<h1>FINISHED STORIS</h1>
 <% @finished_threads.each do |finished_thread| %>
   <%= link_to finished_thread.name, story_thread_path(finished_thread) %>
 <% end %>
