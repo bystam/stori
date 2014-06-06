@@ -15,6 +15,7 @@ class StoryPostsController < ApplicationController
   # POST /story_posts.json
   def create
     @story_post = StoryPost.new(params[:story_post])
+    @story_post.text.trim!
     @story_post.story_thread = StoryThreadsController.current_thread
 
     respond_to do |format|

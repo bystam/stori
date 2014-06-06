@@ -10,5 +10,5 @@
 <% end %>
 
 <% @finished_threads.each do |finished_thread| %>
-  <p><%= finished_thread.name %></p>
+  <%= link_to finished_thread.name, story_thread_path(finished_thread) %>
 <% end %>

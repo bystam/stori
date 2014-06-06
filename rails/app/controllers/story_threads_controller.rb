@@ -20,7 +20,7 @@ class StoryThreadsController < ApplicationController
 
     respond_to do |format|
       if (@story_thread.end.future?)
-        redirect_to root_path
+        format.html { redirect_to root_path, notice: 'Thread is not finished and cannot be viewed.' }
       else
         format.html # show.html.erb
       end

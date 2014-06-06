@@ -15,6 +15,8 @@
   <%= @story_thread.name %>
 </p>
 
-
-<%= link_to 'Edit', edit_story_thread_path(@story_thread) %> |
-<%= link_to 'Back', story_threads_path %>
+<p>
+<% @story_thread.story_posts.each do |story_post| %>
+  <%= "#{story_post.text} " %>
+<% end %>
+</p>
