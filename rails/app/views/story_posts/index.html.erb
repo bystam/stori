@@ -1,24 +1,6 @@
+<%= javascript_include_tag "application", :debug => true %>
+
 <h1>Listing story_posts</h1>
-
-<table>
-  <tr>
-    <th>Text</th>
-    <th>Story thread</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @story_posts.each do |story_post| %>
-  <tr>
-    <td><%= story_post.text %></td>
-    <td><%= story_post.story_thread %></td>
-    <td><%= link_to 'Show', story_post %></td>
-    <td><%= link_to 'Edit', edit_story_post_path(story_post) %></td>
-    <td><%= link_to 'Destroy', story_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
 <br />
 
