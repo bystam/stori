@@ -1,27 +1,14 @@
-<h1>Listing story_threads</h1>
+<h1>Todays story</h1>
 
-<table>
-  <tr>
-    <th>Start</th>
-    <th>End</th>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<p><%= @last_words %></p>
 
-<% @story_threads.each do |story_thread| %>
-  <tr>
-    <td><%= story_thread.start %></td>
-    <td><%= story_thread.end %></td>
-    <td><%= story_thread.name %></td>
-    <td><%= link_to 'Show', story_thread %></td>
-    <td><%= link_to 'Edit', edit_story_thread_path(story_thread) %></td>
-    <td><%= link_to 'Destroy', story_thread, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<%= form_for @story_post do |f| %>
+  <%= f.label :text %>:
+  <%= f.text_field :text %><br />
+
+  <%= f.submit %>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Story thread', new_story_thread_path %>
+<% @finished_threads.each do |finished_thread| %>
+  <p><%= finished_thread.name %></p>
+<% end %>

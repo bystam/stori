@@ -1,4 +1,7 @@
 Stori::Application.routes.draw do
+
+  root :to => 'story_threads#index'
+
   resources :story_posts
 
   resources :story_threads

@@ -4,11 +4,12 @@ class StoryThreadsController < ApplicationController
   # GET /story_threads
   # GET /story_threads.json
   def index
-    @story_threads = StoryThread.all
+    @last_words = StoryThreadsController.current_thread.story_posts.last.last_words
+    @finished_threads = StoryThread.finished
+    @story_post = StoryPost.new
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @story_threads }
     end
   end
 
@@ -18,8 +19,11 @@ class StoryThreadsController < ApplicationController
     @story_thread = StoryThread.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @story_thread }
+      if (@story_thread.end.future?)
+        redirect_to root_path
+      else
+        format.html # show.html.erb
+      end
     end
   end
 
@@ -41,9 +45,22 @@ class StoryThreadsController < ApplicationController
     story_thread.start = new_start
     story_thread.end = new_end
     story_thread.name = new_name
+    add_default_post story_thread
 
     if story_thread.save
       return story_thread
+    else
+      return nil
+    end
+  end
+
+  def self.add_default_post(story_thread)
+    default = StoryPost.new
+    default.text = "Idag har jag"
+    default.story_thread = story_thread
+
+    if default.save
+      return default
     else
       return nil
     end
