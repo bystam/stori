@@ -12,6 +12,7 @@ body {
   width: 768px;
   margin: auto;
   position: relative;
+  padding-bottom: 100px;
 }
 
 h1 {
@@ -116,7 +117,11 @@ a:hover {
   margin-top: 80px;
 }
 
-
+#stori {
+  font-size: 1.6em;
+  text-align: left;
+  margin-bottom: 60px;
+}
 
 
 

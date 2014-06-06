@@ -1,22 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Start:</b>
-  <%= @story_thread.start %>
-</p>
-
-<p>
-  <b>End:</b>
-  <%= @story_thread.end %>
-</p>
-
-<p>
-  <b>Name:</b>
+<h1>
   <%= @story_thread.name %>
-</p>
+</h1>
 
-<p>
+<p id="stori">
 <% @story_thread.story_posts.each do |story_post| %>
   <%= "#{story_post.text} " %>
 <% end %>
 </p>
+
+<%= link_to "Back to main page", root_path %>

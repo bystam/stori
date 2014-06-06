@@ -22,7 +22,7 @@ class StoryPostsController < ApplicationController
       if @story_post.save
         format.html { redirect_to root_path, notice: 'Story post was successfully created.' }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to root_path, notice: 'Story post was not created.' }
       end
     end
   end

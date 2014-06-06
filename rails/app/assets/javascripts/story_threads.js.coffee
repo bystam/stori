@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 MAX_LENGTH = 140
+MINIMUM_WORDS = 3
 
 $ ->
   inputArea = $ '#input-area'
@@ -13,3 +14,6 @@ $ ->
 
   inputArea.keyup updateCounter
 
+  ($ '#new_story_post').submit () ->
+    if inputArea.val().split(' ').length < MINIMUM_WORDS
+      return false

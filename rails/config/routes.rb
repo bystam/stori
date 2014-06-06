@@ -2,9 +2,9 @@ Stori::Application.routes.draw do
 
   root :to => 'story_threads#index'
 
-  resources :story_posts
+  resources :story_posts, :only => [:create]
 
-  resources :story_threads
+  resources :story_threads, :only => [:show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
