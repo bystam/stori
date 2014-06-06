@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Start:</b>
+  <%= @story_thread.start %>
+</p>
+
+<p>
+  <b>End:</b>
+  <%= @story_thread.end %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @story_thread.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_story_thread_path(@story_thread) %> |
+<%= link_to 'Back', story_threads_path %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Text:</b>
+  <%= @story_post.text %>
+</p>
+
+<p>
+  <b>Story thread:</b>
+  <%= @story_post.story_thread %>
+</p>
+
+
+<%= link_to 'Edit', edit_story_post_path(@story_post) %> |
+<%= link_to 'Back', story_posts_path %>
