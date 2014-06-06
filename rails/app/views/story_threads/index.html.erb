@@ -4,12 +4,12 @@
 <p id="words"><span class="dots">... </span><%= @last_words %><span class="dots">...</span></p>
 
 <%= form_for @story_post do |f| %>
-  <%= f.text_area :text %><br />
+  <%= f.text_area :text, id: "input-area", maxlength: "140" %><br />
   <div id="counter">140</div>
   <%= f.submit %>
 <% end %>
 
-<h1>FINISHED STORIS</h1>
+<h1 id="finished-title">FINISHED STORIS</h1>
 <% @finished_threads.each do |finished_thread| %>
   <%= link_to finished_thread.name, story_thread_path(finished_thread) %>
 <% end %>

@@ -4,6 +4,7 @@ body {
   line-height: 1.42em;
   color: #4DC3FA;
   background-color:#1F2739;
+  text-align: center;
 }
 
 #container {
@@ -85,3 +86,46 @@ textarea {
   line-height: 40px;
   font-size: 1.5em;
 }
+
+a {
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 10px;
+  width: 60%;
+  line-height: 40px;
+  height: 40px;
+  margin: 0px auto;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+
+  border: 1px solid rgba(0, 0, 0, 0.4);
+
+  font-size: 1.2em;
+}
+
+a:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+
+  color: #000;
+
+  transition: 0.25s;
+}
+
+#finished-title {
+  margin-top: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
