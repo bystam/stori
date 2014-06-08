@@ -3,5 +3,5 @@ class StoryThread < ActiveRecord::Base
 
   has_many :story_posts
 
-  scope :finished, lambda { where('end < ?', DateTime.now) }
+  scope :finished, lambda { where('end_time < ?', DateTime.now) }
 end
