@@ -19,7 +19,7 @@ class StoryThreadsController < ApplicationController
     @story_thread = StoryThread.find(params[:id])
 
     respond_to do |format|
-      if (@story_thread.end.future?)
+      if (@story_thread.end_time.future?)
         format.html { redirect_to root_path, notice: 'Thread is not finished and cannot be viewed.' }
       else
         format.html # show.html.erb
@@ -29,7 +29,7 @@ class StoryThreadsController < ApplicationController
 
   def self.current_thread
     current_last = StoryThread.last
-    if current_last.nil? || current_last.end.past?
+    if current_last.nil? || current_last.end_time.past?
       current_last = create_new_thread
     end
     return current_last
@@ -42,8 +42,8 @@ class StoryThreadsController < ApplicationController
     new_name = new_start.to_date.to_s
 
     story_thread = StoryThread.new
-    story_thread.start = new_start
-    story_thread.end = new_end
+    story_thread.start_time = new_start
+    story_thread.end_time = new_end
     story_thread.name = new_name
     add_default_post story_thread
 
