@@ -16,6 +16,10 @@
 <h1 id="finished-title" class="animated bounceInLeft">FINISHED STORIS</h1>
 <div id="finished-list">
   <% @finished_threads.each_with_index do |finished_thread, i| %>
-    <%= link_to finished_thread.name, story_thread_path(finished_thread), class: i.odd? ? "animated bounceInRight" : "animated bounceInLeft" %>
+    <!-- here there be dragons -->
+    <% animated_class = i.odd? ? "animated bounceInRight" : "animated bounceInLeft" %>
+    <% delay = 1.2 + 0.2*i %>
+    <% delay_css = "-webkit-animation-delay: #{delay}s; -moz-animation-delay: #{delay}s;" %>
+    <%= link_to finished_thread.name, story_thread_path(finished_thread), class: animated_class, style: delay_css %>
   <% end %>
 </div>
