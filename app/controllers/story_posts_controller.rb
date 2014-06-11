@@ -19,10 +19,14 @@ class StoryPostsController < ApplicationController
     @story_post.story_thread = StoryThreadsController.current_thread
 
     respond_to do |format|
-      if correct_parent?(@story_post) && @story_post.save
-        format.html { redirect_to root_path, notice: 'Story post was successfully created.' }
+      if correct_parent?(@story_post)
+        if @story_post.save
+          format.html { redirect_to root_path, notice: 'Story post was successfully created.' }
+        else
+          format.html { redirect_to root_path, notice: 'Error when trying to save post.' }
+        end
       else
-        format.html { redirect_to root_path, notice: 'Story post was not created.' }
+        format.html { redirect_to root_path, notice: 'Somebody else posted before you.' }
       end
     end
   end

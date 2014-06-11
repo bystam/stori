@@ -1,6 +1,9 @@
 <h1>CONTINUE THE STORI</h1>
 <hr>
 
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 <p id="words"><span class="dots">... </span><%= @last_words %><span class="dots">...</span></p>
 
 <%= form_for @story_post do |f| %>
