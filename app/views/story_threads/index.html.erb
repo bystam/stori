@@ -1,19 +1,21 @@
-<h1>CONTINUE THE STORI</h1>
-<hr>
+<h1 class="animated bounceInRight">CONTINUE THE STORI</h1>
+<hr class="animated bounceInRight">
 
 <% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
+  <div class="notice animated bounceInRight"><%= flash[:notice] %></div>
 <% end %>
-<p id="words"><span class="dots">... </span><%= @last_words %><span class="dots">...</span></p>
+<p id="words" class="animated bounceInLeft"><span class="dots">... </span><%= @last_words %><span class="dots">...</span></p>
 
-<%= form_for @story_post do |f| %>
+<%= form_for @story_post, :html => { :class => "animated bounceInRight" } do |f| %>
   <%= f.text_area :text, id: "input-area", maxlength: "140" %><br />
   <%= f.hidden_field "parent_id", value: @parent_id %>
   <div id="counter">140</div>
   <%= f.submit %>
 <% end %>
 
-<h1 id="finished-title">FINISHED STORIS</h1>
-<% @finished_threads.each do |finished_thread| %>
-  <%= link_to finished_thread.name, story_thread_path(finished_thread) %>
-<% end %>
+<h1 id="finished-title" class="animated bounceInLeft">FINISHED STORIS</h1>
+<div id="finished-list">
+  <% @finished_threads.each_with_index do |finished_thread, i| %>
+    <%= link_to finished_thread.name, story_thread_path(finished_thread), class: i.odd? ? "animated bounceInRight" : "animated bounceInLeft" %>
+  <% end %>
+</div>

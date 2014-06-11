@@ -53,12 +53,6 @@ p {
   line-height: 40px;
 }
 
-#words {
-  text-align: center;
-  color: #FB667A;
-  opacity: 0.7;
-}
-
 .dots {
   opacity: 0.4;
   font-size: 2em;
@@ -113,8 +107,28 @@ a:hover {
   transition: 0.25s;
 }
 
+#words {
+  text-align: center;
+  color: #FB667A;
+  opacity: 0.7;
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+}
+
+#new_story_post {
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+}
+
 #finished-title {
   margin-top: 80px;
+  -webkit-animation-delay: 0.9s;
+  -moz-animation-delay: 0.9s;
+}
+
+#finished-list a{
+  -webkit-animation-delay: 1.2s;
+  -moz-animation-delay: 1.2s;
 }
 
 #stori {
