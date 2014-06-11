@@ -5,6 +5,7 @@
 
 <%= form_for @story_post do |f| %>
   <%= f.text_area :text, id: "input-area", maxlength: "140" %><br />
+  <%= f.hidden_field "parent_id", value: @parent_id %>
   <div id="counter">140</div>
   <%= f.submit %>
 <% end %>

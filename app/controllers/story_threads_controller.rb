@@ -4,7 +4,9 @@ class StoryThreadsController < ApplicationController
   # GET /story_threads
   # GET /story_threads.json
   def index
-    @last_words = StoryThreadsController.current_thread.story_posts.last.last_words
+    previous_post = StoryThreadsController.current_thread.story_posts.last
+    @last_words = previous_post.last_words
+    @parent_id = previous_post.id
     @finished_threads = StoryThread.finished
     @story_post = StoryPost.new
 

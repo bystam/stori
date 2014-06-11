@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140606163358) do
+ActiveRecord::Schema.define(:version => 20140608201237) do
 
   create_table "story_posts", :force => true do |t|
     t.string   "text"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(:version => 20140606163358) do
   end
 
   create_table "story_threads", :force => true do |t|
-    t.datetime "start"
-    t.datetime "end"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
