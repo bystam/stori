@@ -135,6 +135,7 @@ a:hover {
   font-size: 1.6em;
   text-align: left;
   margin-bottom: 60px;
+  white-space: pre-wrap;
 }
 
 
