@@ -5,9 +5,7 @@
 </h1>
 
 <p id="stori">
-<% @story_thread.story_posts.each do |story_post| %>
-  <%= "#{story_post.text} " %>
-<% end %>
+<% @story_thread.story_posts.each do |story_post| %> <%="#{story_post.text} "%> <% end %>
 </p>
 
 <%= link_to "Back to main page", root_path %>
